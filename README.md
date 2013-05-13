@@ -3,6 +3,13 @@ Container
 
 Very basic dependency injection container.
 
+Build status
+------------
+
+| branch | status |
+| ------ | ------ |
+| master | [![Build Status](https://travis-ci.org/meadsteve/Container.png?branch=master)](https://travis-ci.org/meadsteve/Container) |
+
 Example Usage
 =========
 
