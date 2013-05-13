@@ -1,5 +1,5 @@
 <?php
-include_once "Hamcrest/Hamcrest.php";
+include_once "vendor/autoload.php";
 
 /**
  * Creates an psr-0 style autoloader from the baseDir root.
