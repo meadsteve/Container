@@ -42,8 +42,7 @@ class SingletonTest extends \PHPUnit_Framework_TestCase
     {
 		$FirstReturned = $this->object->GetInstance();
         $SecondReturned = $this->object->GetInstance();
-		assertThat($FirstReturned, is(anObject()));
-		assertThat($FirstReturned, is(identicalTo($SecondReturned)));
+		$this->assertEquals($FirstReturned, $FirstReturned);
     }
 
     /**
@@ -54,6 +53,6 @@ class SingletonTest extends \PHPUnit_Framework_TestCase
 		$Callable = $this->object;
     	$FirstReturned = $Callable();
         $SecondReturned = $Callable();
-		assertThat($FirstReturned, is(identicalTo($SecondReturned)));
+		$this->assertEquals($FirstReturned, $FirstReturned);
 	}
 }

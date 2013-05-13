@@ -83,7 +83,8 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 			return $ExpectedObject;
 		});
 		$RetrievedObject = $this->object->GetResource('TestCallback');
-		assertThat($RetrievedObject, is(identicalTo($ExpectedObject)));
+
+		$this->assertEquals($ExpectedObject, $RetrievedObject);
     }
 
 	 /**
@@ -103,7 +104,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 		});
 
 		$RetrievedObject = $this->object->GetResource('TestCallback');
-		assertThat($RetrievedObject, is(identicalTo($ExpectedObject)));
+		$this->assertEquals($ExpectedObject, $RetrievedObject);
     }
 
 	/**
@@ -140,7 +141,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 		$ExpectedObject = new \stdClass();
         $this->object->Register('TestResource', $ExpectedObject);
 		$RetrievedObject = $this->object->GetResource('TestResource');
-		assertThat($RetrievedObject, is(identicalTo($ExpectedObject)));
+		$this->assertEquals($ExpectedObject, $RetrievedObject);
     }
 
 	 /**
@@ -160,8 +161,8 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 		$this->object->Register('TestResource', $ExpectedObject);
 
 		$RetrievedObject = $this->object->GetResource('TestResource');
-		assertThat($RetrievedObject, is(not($NotExpectedObject)));
-		assertThat($RetrievedObject, is(identicalTo($ExpectedObject)));
+		$this->assertNotEquals($ExpectedObject, $NotExpectedObject);
+		$this->assertEquals($ExpectedObject, $RetrievedObject);
     }
 
 	/**
@@ -174,7 +175,7 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 		$ExpectedObject = new \stdClass();
 		$this->object->TestProperty = $ExpectedObject;
 		$RetrievedObject = $this->object->TestProperty;
-		assertThat($RetrievedObject, is(identicalTo($ExpectedObject)));
+		$this->assertEquals($ExpectedObject, $RetrievedObject);
 	}
 
 		/**
@@ -192,6 +193,6 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 		};
 
 		$RetrievedObject = $this->object->Intermediate;
-		assertThat($RetrievedObject, is(identicalTo($ExpectedObject)));
+		$this->assertEquals($ExpectedObject, $RetrievedObject);
 	}
 }
