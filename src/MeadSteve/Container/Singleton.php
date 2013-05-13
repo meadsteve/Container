@@ -31,7 +31,7 @@ class Singleton {
 	/**
 	 * @param callable $WrappedCallback Function that creates the singleton resource.
 	 */
-	public function __construct(callable $WrappedCallback) {
+	public function __construct($WrappedCallback) {
 		$this->Callback = $WrappedCallback;
 		$this->LoadedInstance = null;
 	}

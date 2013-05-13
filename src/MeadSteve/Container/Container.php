@@ -138,7 +138,7 @@ class Container {
 	 * @param string $Name
 	 * @param callable $Callback
 	 */
-	protected function RegisterCallback($Name, callable $Callback) {
+	protected function RegisterCallback($Name, $Callback) {
 		$this->arrRegisteredCallbacks[$Name] = $Callback;
 	}
 
